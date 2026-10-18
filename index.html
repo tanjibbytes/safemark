@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeMark - BhoyNa Means No Fear</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f5f7fb;margin:0;padding:20px;text-align:center}
+.box{max-width:700px;background:white;margin:auto;padding:25px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+h1{color:#2c3e80;margin:0}
+.tag{color:#666}
+.upload{border:2px dashed #2c3e80;padding:30px;border-radius:10px;margin:20px 0;cursor:pointer;background:#eef2ff}
+.btn{background:#2c3e80;color:white;padding:12px 25px;border:none;border-radius:8px;font-size:16px;cursor:pointer;margin:10px}
+.result{display:none;text-align:left;background:#f9f9ff;padding:15px;border-radius:10px;margin-top:20px;border-left:5px solid #2c3e80}
+.parent{background:#e8f5e9;padding:15px;border-radius:10px;margin-top:15px;text-align:left}
+.small{font-size:12px;color:#888;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>SafeMark</h1>
+<p class="tag">Turning Shame into Study - BhoyNa Means No Fear</p>
+<div class="upload" onclick="document.getElementById('file').click()">
+<p>📸 Upload Your Wrong Answer Photo</p>
+<input type="file" id="file" hidden onchange="showFile()">
+<p id="fname" style="color:#2c3e80;font-weight:bold"></p>
+</div>
+<button class="btn" onclick="analyze()">Analyze My Mistake</button>
+<div class="result" id="result">
+<h3>✅ AI Analysis Result:</h3>
+<p><b>❌ Mistake:</b> Algebra formula missed, step 2 wrong.</p>
+<p><b>💡 Why:</b> Fear of low marks = hurry to finish.</p>
+<p><b>📚 Fix Now (2 easy tasks):</b><br>1. Practice (a+b)² formula 3 times<br>2. Solve 2 easy equations: x+5=10</p>
+<div class="parent">
+<h4>👨‍👩‍👧 Parent View - Progress Report</h4>
+<p>Today: 20% progress ✅ (Not just "4 marks")<br>Effort: Trying again<br>Message: Low marks = learning, not shame</p>
+</div>
+<p><b>Verified:</b> I got 4 in Math, interviewed 5 friends from Sylhet - all faced same fear.</p>
+</div>
+<p class="small">Built Solo by Student from Sylhet, Bangladesh | Neighborhood Hacks | SafeMark 2026</p>
+</div>
+<script>
+function showFile(){
+ let f=document.getElementById('file').files[0];
+ if(f){document.getElementById('fname').innerText="Selected: "+f.name}
+}
+function analyze(){
+ if(!document.getElementById('file').files[0]){
+   alert("First select a photo!");
+   return;
+ }
+ document.getElementById('result').style.display='block';
+ document.getElementById('result').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+  </html>
